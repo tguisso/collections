@@ -32,9 +32,11 @@ public class Tarefa {
 		return atividades.size();
 	}
 	
-	public void obterDescricoesAtividades () {
+	public List<String> obterDescricoesAtividades () {
+		List<String> descricoes = new ArrayList<>();
 		for (Atividade atividade : atividades) {
-			System.out.println(atividade.getDescricao());
+			descricoes.add(atividade.getDescricao());
 		}
+		return descricoes;
 	}
 }

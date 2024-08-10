@@ -3,6 +3,7 @@ package com.collections.list;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,50 @@ public class TarefaUnitTest {
 	
 	@Test
 	void deveObterTotalTarefas() {
+		List<Atividade> atividades = new ArrayList<>();
+		atividades.add(new Atividade("Molhar plantas"));
+		atividades.add(new Atividade("Podar galhos"));
+		atividades.add(new Atividade("Colher frutas"));
+		Tarefa tarefa = Tarefa.builder()
+				.atividades(atividades)
+				.build();
 		
+		int totalTarefas = tarefa.obterNumeroTotal();
+		
+		assertEquals(3, totalTarefas);
+	}
+	
+	@Test
+	void deveObterDescricao() {
+		List<Atividade> atividades = new ArrayList<>();
+		atividades.add(new Atividade("Molhar plantas"));
+		atividades.add(new Atividade("Podar galhos"));
+		atividades.add(new Atividade("Colher frutas"));
+		Tarefa tarefa = Tarefa.builder()
+				.atividades(atividades)
+				.build();
+		
+		int totalTarefas = tarefa.obterNumeroTotal();
+		
+		assertEquals(3, totalTarefas);
+	}
+	
+	@Test
+	void deveObterDescricaoAtividades() {
+		List<Atividade> atividades = new ArrayList<>();
+		atividades.add(new Atividade("Molhar plantas"));
+		atividades.add(new Atividade("Podar galhos"));
+		atividades.add(new Atividade("Colher frutas"));
+		Tarefa tarefa = Tarefa.builder()
+				.atividades(atividades)
+				.build();
+		
+		List<String> descricoesAtividades = tarefa.obterDescricoesAtividades();
+		
+		assertTrue(descricoesAtividades.size() == 3);
+		assertEquals(tarefa.getAtividades().get(0).getDescricao(), descricoesAtividades.get(0));
+		assertEquals(tarefa.getAtividades().get(1).getDescricao(), descricoesAtividades.get(1));
+		assertEquals(tarefa.getAtividades().get(2).getDescricao(), descricoesAtividades.get(2));
 	}
 
 }
