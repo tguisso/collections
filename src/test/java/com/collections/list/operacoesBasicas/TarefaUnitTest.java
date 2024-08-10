@@ -1,4 +1,4 @@
-package com.collections.list;
+package com.collections.list.operacoesBasicas;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
+import com.collections.list.operacoesBasicas.Atividade;
+import com.collections.list.operacoesBasicas.Tarefa;
 
 public class TarefaUnitTest {
 	

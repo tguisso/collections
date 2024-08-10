@@ -1,4 +1,4 @@
-package com.collections.list;
+package com.collections.list.operacoesBasicas;
 
 import lombok.Builder;
 import lombok.Getter;
