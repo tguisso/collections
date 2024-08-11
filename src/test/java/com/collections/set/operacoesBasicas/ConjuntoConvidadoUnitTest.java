@@ -1,4 +1,4 @@
-package com.collections.set;
+package com.collections.set.operacoesBasicas;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -8,6 +8,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
+
+import com.collections.set.operacoesBasicas.ConjuntoConvidado;
+import com.collections.set.operacoesBasicas.Convidado;
 
 class ConjuntoConvidadoUnitTest {
 	

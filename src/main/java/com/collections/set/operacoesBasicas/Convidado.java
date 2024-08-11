@@ -1,4 +1,4 @@
-package com.collections.set;
+package com.collections.set.operacoesBasicas;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

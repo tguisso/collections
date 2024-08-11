@@ -1,4 +1,4 @@
-package com.collections.set;
+package com.collections.set.operacoesBasicas;
 
 import java.util.Set;
 
@@ -18,12 +18,14 @@ public class ConjuntoConvidado {
 	}
 	
 	public void removerConvidadoPeloCodigoConvite(int codigoConvite) {
+		Convidado paraRemover = null;
 		for (Convidado convidado : convidados) {
 			if(convidado.getCodigoConvite() == codigoConvite) {
-				convidados.remove(convidado);
+				paraRemover = convidado;
 				break;
 			}
 		}
+		convidados.remove(paraRemover);
 	}
 	
 	public int contarConvidados() {
