@@ -16,25 +16,20 @@ public class ConjuntoPalavrasUnicas {
 	}
 
 	public void removerPalavra(String palavraRemover) {
-		String remover = null;
-		for (String palavra : palavrasUnicas) {
-			if(palavra.equals(palavraRemover)) {
-				remover = palavra;
-				break;
+		if(!palavrasUnicas.isEmpty()) {
+			if(palavrasUnicas.contains(palavraRemover)) {
+				palavrasUnicas.remove(palavraRemover);
+			} else {
+				System.out.println("Palavra não encontrada.");
 			}
+		} else {
+			System.out.println("Não há itens para remover.");
 		}
-		palavrasUnicas.remove(remover);
+		
 	}
 
 	public boolean verificarPalavra(String palavra) {
-		boolean existe = false;
-		for (String palavraUnica : palavrasUnicas) {
-			if(palavraUnica.equals(palavra)) {
-				existe = true;
-				break;
-			}
-		}
-		return existe;
+		return palavrasUnicas.contains(palavra);
 	}
 
 	public Set<String> exibirPalavrasUnicas() {
