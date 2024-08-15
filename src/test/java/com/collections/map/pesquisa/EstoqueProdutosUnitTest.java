@@ -76,6 +76,35 @@ class EstoqueProdutosUnitTest {
 		assertTrue(resultado.getPreco() == 15.00);
 		assertEquals("Produto C", resultado.getNome());
 	}
+
+	@Test
+	void deveObterMaisBarato() {
+		Map<Long, Produto> produtos = new HashMap<>();
+		produtos.put(1L, new Produto("Produto A", 10, 5.0));
+		produtos.put(2L, new Produto("Produto B", 5, 10.0));
+		produtos.put(3L, new Produto("Produto C", 2, 15.0)); 
+		EstoqueProdutos estoque = new EstoqueProdutos(produtos);
+		
+		Produto resultado = estoque.obterProdutoMaisBarato();
+		
+		assertTrue(resultado.getPreco() == 5.00);
+		assertEquals("Produto A", resultado.getNome());
+	}
+
+	@Test
+	void deveObterMaiorValorEQuantidade() {
+		Map<Long, Produto> produtos = new HashMap<>();
+		produtos.put(1L, new Produto("Produto A", 1, 1500.0));
+		produtos.put(2L, new Produto("Produto B", 5, 25.0));
+		produtos.put(3L, new Produto("Produto C", 10, 400.0)); 
+		produtos.put(4L, new Produto("Produto D", 2, 40.0)); 
+		EstoqueProdutos estoque = new EstoqueProdutos(produtos);
+		
+		Produto resultado = estoque.obterProdutoMaiorQuantidadeEValorTotal();
+		
+		assertTrue(resultado.getPreco() == 400.00);
+		assertEquals("Produto C", resultado.getNome());
+	}
 	
 
 }

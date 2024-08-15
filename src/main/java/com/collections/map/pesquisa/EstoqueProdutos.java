@@ -44,4 +44,33 @@ public class EstoqueProdutos {
 		}
 		return produtoMaisCaro;
 	}
+
+	public Produto obterProdutoMaisBarato() {
+		Produto produtoMaisBarato = null;
+		if(!produtos.isEmpty()) {
+			double menorPreco = Double.MAX_VALUE;
+			for (Produto produto : produtos.values()) {
+				if(produto.getPreco() < menorPreco) {
+					menorPreco = produto.getPreco();
+					produtoMaisBarato = produto;
+				}
+			}
+		}
+		return produtoMaisBarato;
+	}
+	
+	public Produto obterProdutoMaiorQuantidadeEValorTotal() {
+		Produto produtoMaiorQuantidadeValorNoEstoque = null;
+		double maiorValorTotalEstoque = 0d;
+		if (!produtos.isEmpty()) {
+			for (Map.Entry<Long, Produto> entry : produtos.entrySet()) {
+				double valorProdutoEstoque = entry.getValue().getPreco() * entry.getValue().getQuantidade();
+				if(valorProdutoEstoque > maiorValorTotalEstoque) {
+					maiorValorTotalEstoque = valorProdutoEstoque;
+					produtoMaiorQuantidadeValorNoEstoque = entry.getValue();
+				}
+			}
+		}
+		return produtoMaiorQuantidadeValorNoEstoque;
+	}
 }
