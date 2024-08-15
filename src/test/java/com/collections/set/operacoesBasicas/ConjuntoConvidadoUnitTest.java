@@ -9,9 +9,6 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import com.collections.set.operacoesBasicas.ConjuntoConvidado;
-import com.collections.set.operacoesBasicas.Convidado;
-
 class ConjuntoConvidadoUnitTest {
 	
 	@Test
@@ -23,7 +20,7 @@ class ConjuntoConvidadoUnitTest {
 		conjunto.adicionarConvidado("AA", 0);
 		
 		assertEquals(1, conjunto.getConvidados().size());
-		assertTrue(conjunto.convidados.contains(new Convidado("AA", 0)));
+		assertTrue(conjunto.getConvidados().contains(new Convidado("AA", 0)));
 	}
 
 	@Test
@@ -35,7 +32,7 @@ class ConjuntoConvidadoUnitTest {
 		conjunto.removerConvidadoPeloCodigoConvite(0);
 		
 		assertEquals(0, conjunto.getConvidados().size());
-		assertFalse(conjunto.convidados.contains(new Convidado("AA", 0)));
+		assertFalse(conjunto.getConvidados().contains(new Convidado("AA", 0)));
 	}
 	
 	@Test
