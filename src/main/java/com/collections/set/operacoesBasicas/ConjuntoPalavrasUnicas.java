@@ -4,9 +4,11 @@ import java.util.Set;
 
 import lombok.Builder;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 @Builder
 @ToString
+@Slf4j
 public class ConjuntoPalavrasUnicas {
 
 	Set<String> palavrasUnicas;
@@ -20,10 +22,10 @@ public class ConjuntoPalavrasUnicas {
 			if(palavrasUnicas.contains(palavraRemover)) {
 				palavrasUnicas.remove(palavraRemover);
 			} else {
-				System.out.println("Palavra não encontrada.");
+				log.warn("Palavra não encontrada.");
 			}
 		} else {
-			System.out.println("Não há itens para remover.");
+			log.info("Não há itens para remover.");
 		}
 		
 	}
